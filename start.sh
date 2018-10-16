@@ -2,6 +2,7 @@
 
 cd $(dirname $0)
 echo "Project Kobayashi (provided by Senorsen) is starting..."
+echo "Hint: 合理安排游戏学习时间，记得复习 Java ！"
 echo
 test -f ss-config.json || (echo "Error: no ss config detected."; exit 1)
 test -f ss-ip.txt || (echo "Error: no ss ip config detected."; exit 1)
@@ -60,4 +61,4 @@ iptables -t mangle -A PREROUTING -p udp -j TPROXY --on-port 10707 --tproxy-mark 
 # Start dnsmasq
 systemctl restart dnsmasq
 # Start shadowsocks
-ss-redir -v -u -c ./ss-config.json
+ss-redir -u -c ./ss-config.json
